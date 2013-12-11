@@ -1,8 +1,13 @@
-var Router = Ember.Router.extend(); // ensure we don't share routes between all Router instances
+var Router = Ember.Router.extend({
+  //location:'none' disable history navigation
+});
 
 Router.map(function() {
   this.route('component-test');
   this.route('helper-test');
+  this.resource('miniprofiles', function() {
+    this.resource('miniprofile', { path:'/:member_id' });
+  });
   // this.resource('posts', function() {
   //   this.route('new');
   // });
