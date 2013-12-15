@@ -7,7 +7,10 @@
     "Ember",
     "Em",
     "DS",
-    "$"
+    "$",
+    "console",
+    "jQuery",
+    "Appkit"
   ],
   "node" : false,
   "browser" : false,

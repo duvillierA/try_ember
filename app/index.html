@@ -71,7 +71,11 @@
     </p>
   <![endif]-->
 
+  <a href="">click outside scope</a>
+
   <div id="scope"></div>
+
+  <a style="padding:30px;background:red;">click outside scope</a>
 
   <!-- @if tests=true -->
   <div id="qunit"></div>
@@ -83,7 +87,8 @@
 
   <!-- @if tests=false -->
   <script>
-    window.App = require('appkit/app')["default"].create();
+    window.Appkit = require('appkit/app')["default"].create();
+    window.Main = require('appkit/main')["default"];
   </script>
   <!-- @endif -->
 

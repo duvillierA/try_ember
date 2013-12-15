@@ -6,7 +6,7 @@ Router.map(function() {
   this.route('component-test');
   this.route('helper-test');
   this.resource('miniprofiles', function() {
-    this.resource('miniprofile', { path:'/:member_id' });
+    this.resource('miniprofile', { path:'/:memberid' });
   });
   // this.resource('posts', function() {
   //   this.route('new');
