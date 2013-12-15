@@ -5,7 +5,7 @@ var Main = (function($){
     e.preventDefault();
     Appkit.__container__.lookup('controller:miniprofile').send('showMiniprofile',{
       memberid: 'memberId',
-      placementElement : 'sw-alt',
+      placement : 'sw-alt',
       targetElement: $(this)
     });
   }).on('mouseout', function(){

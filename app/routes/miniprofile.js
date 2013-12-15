@@ -1,7 +1,6 @@
 var count=0;
 var miniprofileRoute =  Ember.Route.extend({
   model: function(params) {
-    console.log('route miniprofile', params);
     return new Ember.RSVP.Promise(function(resolve) {
         Ember.run.later(function() {
           if(count++ % 2 === 0) {
@@ -21,12 +20,10 @@ var miniprofileRoute =  Ember.Route.extend({
           }
         }, 600);
     });
-    //return this.store.find('miniprofile', params.member_id);
   },
   actions: {
     loading: function(transition, originRoute) {
       // Return true to bubble this event to `FooRoute` or `ApplicationRoute`.
-      // Return to not bubble this event
       if (originRoute.routeName === 'miniprofile') {
         this.controllerFor('miniprofile').set('isLoading', true);
       }
