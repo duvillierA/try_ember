@@ -1,6 +1,6 @@
-var Tooltip = function($window) {
+var Tooltip = function() {
 
-    this.$window = $window || null;
+    this.$window = $(window);
     this.session = {};
 
     this.smart = true;

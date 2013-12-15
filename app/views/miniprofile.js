@@ -1,6 +1,6 @@
 import TooltipBuilder from 'appkit/utils/tooltip';
 
-var miniprofileView =  Ember.View.extend({
+var miniprofileView = Ember.View.extend({
   classNames: ['comp-miniprofile'],
   tooltip : null,
   targetElement: function () {
@@ -10,14 +10,14 @@ var miniprofileView =  Ember.View.extend({
     return this.get('controller.placement');
   }.property('controller'),
   willInsertElement : function () {
-    var tooltip = new TooltipBuilder($(window));
+    var tooltip = new TooltipBuilder();
     this.set('tooltip', tooltip);
   },
   didInsertElement: function() {
     var
       $miniprofile = this.$(),
       tooltip = this.get('tooltip'),
-      css= tooltip.getCss(
+      css = tooltip.getCss(
         this.get('targetElement'),
         this.get('placement'),
         $miniprofile.width(),

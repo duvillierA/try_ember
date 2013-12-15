@@ -1,8 +1,8 @@
-<div {{bind-attr class="isLoading:hidden:animated"}} >
+<div {{bind-attr class="visible:animated:hidden"}} >
 {{#if isLoading}} I'm loading... {{else}} show model {{/if}}<br />
 {{fullName}} {{id}}<br />
 {{headline}}<br />
 {{placement}}<br />
-{{css.top}}
+{{visible}}
 <img {{bind-attr src="avatarUrl"}} />
 </div>

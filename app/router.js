@@ -5,12 +5,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('component-test');
   this.route('helper-test');
-  this.resource('miniprofiles', function() {
-    this.resource('miniprofile', { path:'/:memberid' });
-  });
-  // this.resource('posts', function() {
-  //   this.route('new');
-  // });
+  this.route('miniprofile', { path:'miniprofile/:memberid' });
 });
 
 export default Router;
