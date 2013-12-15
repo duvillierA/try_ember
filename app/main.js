@@ -1,15 +1,15 @@
 import miniprofileController from 'appkit/controllers/miniprofile';
 
 var Main = (function($){
-  $('a').on('mouseover',function(e){
-    e.preventDefault();
-    Appkit.__container__.lookup('controller:miniprofile').send('showMiniprofile',{
+  var miniprofileController = Appkit.__container__.lookup('controller:miniprofile');
+  $('#content').on('mouseover', '.miniprofileTarget', function(){
+    miniprofileController.send('showMiniprofile',{
       memberid: 'memberId',
       placement : 'nw-alt',
       targetElement: $(this)
     });
-  }).on('mouseout', function(){
-      Appkit.__container__.lookup('controller:miniprofile').send('hideMiniprofile');
+  }).on('mouseout', '.miniprofileTarget', function(){
+    miniprofileController.send('hideMiniprofile');
   });
 })(jQuery);
 
