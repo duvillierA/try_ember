@@ -1,4 +1,10 @@
 import Resolver from 'resolver';
+import miniprofileEvents from 'appkit/events/miniprofile';
+
+import truncateHelper from 'appkit/helpers/truncate';
+import translateHelper from 'appkit/helpers/truncate';
+Ember.Handlebars.registerBoundHelper('truncate', truncateHelper);
+Ember.Handlebars.registerBoundHelper('t', translateHelper);
 
 var App = Ember.Application.extend({
   LOG_ACTIVE_GENERATION: true,
@@ -8,7 +14,7 @@ var App = Ember.Application.extend({
   LOG_VIEW_LOOKUPS: true,
   modulePrefix: 'appkit', // TODO: loaded via config
   Resolver: Resolver['default'],
-  rootElement: '#scope'
+  rootElement: '#ember-global'
 });
 
 Ember.RSVP.configure('onerror', function(error) {
@@ -19,5 +25,9 @@ Ember.RSVP.configure('onerror', function(error) {
     Ember.Logger.error(error.stack);
   }
 });
+
+  (function ($) {
+    miniprofileEvents();
+  })(window.jQuery);
 
 export default App;

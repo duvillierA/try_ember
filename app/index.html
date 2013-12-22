@@ -72,13 +72,17 @@
   <![endif]-->
 
   <div id="content">
-    <a href="" class="miniprofileTarget">mouseover outside scope</a>
-
-    <div id="scope"></div>
-
-    <p>
-    <a href="" class="miniprofileTarget">mouseover outside scope</a>
+    <h1>Outside scope events</h1>
+    <h2>Place a tooltip from a target element</h2>
+    <p style="margin-top:40px">
+      <a href="" class="miniprofile-target" data-memberid="1" data-placement="s">
+        <img src="http://placehold.it/650x250" />
+      </a>
     </p>
+  </div>
+
+  <div id="ember-global">
+
   </div>
 
   <!-- @if tests=true -->
@@ -92,7 +96,6 @@
   <!-- @if tests=false -->
   <script>
     window.Appkit = require('appkit/app')["default"].create();
-    window.Main = require('appkit/main')["default"];
   </script>
   <!-- @endif -->
 

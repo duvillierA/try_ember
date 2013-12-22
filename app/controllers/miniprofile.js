@@ -14,7 +14,9 @@ export default Ember.ObjectController.extend({
         targetElement = params.hasOwnProperty('targetElement') ? params.targetElement : null,
         memberid = params.hasOwnProperty('memberid') ? params.memberid : null
       ;
-      if(placement) this.set('placement', placement);
+      if(placement)  {
+        this.set('placement', placement);
+      }
       if(targetElement && memberid) {
         this.set('targetElement', targetElement);
         this.transitionToRoute('miniprofile', memberid);
